@@ -1,0 +1,114 @@
+/* Basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.terminal {
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  animation: flicker 1.5s infinite;
+}
+
+/* Output styles */
+#output {
+  margin-top: 20px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 400px; /* Set a max height for scrollable area */
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00ff00;
+}
+
+/* Loading Text and Progress Bar */
+#loading {
+  margin-top: 20px;
+  text-align: center;
+  visibility: hidden;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: #029c4f;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: width 0.5s linear;
+}
+
+#loading-text {
+  font-size: 16px;
+  color: #00ff00;
+  margin-top: 10px;
+}
+
+/* Flickering effect for h1 */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Media Queries for Responsiveness */
+
+/* On tablets and smaller screens, adjust terminal size */
+@media (max-width: 768px) {
+  body {
+      padding: 10px;
+  }
+
+  .terminal {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+  }
+
+  #output {
+      max-height: 300px;
+      font-size: 14px;
+  }
+
+  #loading-text {
+      font-size: 14px;
+  }
+}
+
+/* On mobile devices, adjust font and spacing */
+@media (max-width: 480px) {
+  .terminal {
+      width: 100%;
+      max-width: 100%;
+      padding: 5px;
+  }
+
+  h1 {
+      font-size: 18px;
+  }
+
+  #output {
+      max-height: 250px;
+      font-size: 12px;
+  }
+
+  #loading-text {
+      font-size: 12px;
+  }
+}
